@@ -20,7 +20,6 @@ const checkQueryString = (queryData) => {
     }
     return false;
   }
-
   return false;
 };
 
