@@ -13,9 +13,14 @@ let cacheObj = {};
 const db = connectToDB();
 db.all = util.promisify(db.all);
 
+// serving static file
+app.use(express.static("public"))
+
+console.log(__dirname)
+
 // API spec file
 app.get("/", async (req, res) => {
-    res.sendFile(path.join(__dirname, '/apiSpec.html'))
+    res.sendFile(path.join(__dirname, '/public/apiSpec.html'))
 });
 
 // return all the countries from database
